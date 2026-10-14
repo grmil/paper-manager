@@ -2,20 +2,49 @@
 
 ### A TUI research paper manager written in rust
 
+### TUI
+|--------------------------------|
+|          |                     |
+|          |                     |
+|          |                     |
+| Keywords |                     |
+|          |                     |
+|   tags   | Main List of papers |
+|          |                     |
+|  filters |                     |
+|          |                     |
+|          |                     |
+|--------------------------------|
+|       Search (VIM-like)        |
+|--------------------------------|
+
+### Local Data Structure
+Files:
+- index.sqlite
+- references.bib
+- config.toml
+
+Folders:
+- notes
+- pdfs
+
+
 ### Features
-- fzf, rg searching
+- nucleo crate and SQlite FTS5 for searching
 - vim bindings
 - bibtex management
-- auto-rename/categorize on pdf import
+- create key based on bibtex import, pdf named <key>.pdf, note named <key>.md
 - tags
-- notes(md? pdf?) linked to pdfs
+- notes in markdown, linked to entries
 - auto-category and manual category (say having references for a specific paper separate)
-- reading stats? (track read, in-progress, not read)
-- GROBID for metadata extraction
--duplicate detection?
-- store in folders for manual access
+- duplicate detection
 - import/export bibtex
-- pdf previews -> external pdf viewer
+- open pdfs with external viewer
+- entries do not require a pdf
+- master bib is source of truth, keep on github, index can be rebuilt from it
+- in master bib, save tags, keywords, etc. as extra fields
+
+### Optional Later Features
+- GROBID for metadata extraction
 - related paper matching (direct references, fuzzy, etc.)
 - in-pdf links to local references?
-- sqlite for metadata?
